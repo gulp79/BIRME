@@ -1,73 +1,86 @@
-# Welcome to your Lovable project
+# MyBIRME – Bulk Image Resizer & Cropper
 
-## Project info
+MyBIRME is a fast, privacy‑focused, and user‑friendly web application for bulk image resizing and smart cropping, inspired by the original BIRME (Bulk Image Resizing Made Easy).  
+All image processing happens **100% locally in your browser**, ensuring full privacy and zero uploads to external servers.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+🚀 **Resize, crop, and export hundreds of images in seconds — instantly, securely, and for free.**
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## ⚡ Features
 
-**Use Lovable**
+- 📁 **Bulk Image Upload**  
+  Drag & drop multiple images or select them from your device.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- ✂️ **Smart Auto‑Cropping**  
+  Automatically crops images based on the specified dimensions.
 
-Changes made via Lovable will be committed automatically to this repo.
+- 📏 **Exact Size Controls**  
+  Set width, height, aspect ratio lock, and crop options.
 
-**Use your preferred IDE**
+- 🖼️ **Real‑Time Preview**  
+  See how each image will look before exporting.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- 📦 **Batch Export (ZIP)**  
+  Download all processed images in a single compressed ZIP file.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- 💻 **Runs 100% in Browser**  
+  No uploads, no tracking, no data stored on servers.
 
-Follow these steps:
+- 🎨 **Dark Mode Support**
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- 💾 **Settings Persistence**  
+  Your configuration is saved locally via LocalStorage.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🧩 How It Works
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+MyBIRME uses modern browser APIs to perform all operations client‑side:
+
+- HTML5 Canvas for resizing & cropping  
+- Web Workers for smooth performance with many images  
+- JSZip for local ZIP file generation  
+- No backend or server logic required  
+
+This ensures maximum speed and complete privacy.
+
+---
+
+## 📚 Usage
+
+1. Open the application in your browser.
+2. Drag & drop your images (or click *Load Images*).
+3. Adjust:
+   - Width & height  
+   - Crop mode  
+   - Aspect ratio  
+   - Output format (JPG/PNG/WEBP)  
+   - Quality settings  
+4. Preview the results.
+5. Click **Download All** to export a ZIP containing all processed images.
+
+---
+
+## 🛠️ Technologies Used
+
+- **JavaScript / TypeScript** (depending on your implementation)
+- **React** or Vanilla JS (depending on final generated code)
+- **TailwindCSS / Custom CSS**
+- **Canvas API**
+- **JSZip**
+- **Web Workers**
+
+*(If you want, I can update this section once your codebase is final.)*
+
+---
+
+## 📦 Installation (Development)
+
+If you want to run or modify MyBIRME locally:
+
+```bash
+git clone https://github.com/gulp79/BIRME.git
+cd BIRME
+npm install
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)

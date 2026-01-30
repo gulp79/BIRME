@@ -14,7 +14,7 @@ export function Header() {
           </div>
           <div>
             <h1 className="text-lg font-bold tracking-tight">
-              BIRME <span className="text-primary">Personal Edition</span>
+              BIRME <span className="text-primary">Gulp Personal Edition</span>
             </h1>
             <p className="text-xs text-muted-foreground hidden sm:block">
               Bulk Image Resizing Made Easy
@@ -48,7 +48,7 @@ export function Header() {
             asChild
           >
             <a
-              href="https://github.com"
+              href="https://github.com/gulp79/BIRME/"
               target="_blank"
               rel="noopener noreferrer"
             >

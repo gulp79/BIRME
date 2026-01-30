@@ -15,7 +15,7 @@ export function Footer() {
               Made with <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500" /> for privacy
             </span>
             <a
-              href="https://github.com"
+              href="https://github.com/gulp79/BIRME"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"

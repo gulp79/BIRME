@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BIRME Personal Edition - Dark Tech Design System */
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 175 80% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 220 20% 20%;
+
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 175 80% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 175 80% 40%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(175 80% 40%), hsl(190 80% 50%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 15% 98%));
+    --shadow-soft: 0 4px 20px -4px hsl(220 20% 10% / 0.1);
+    --shadow-glow: 0 0 30px -5px hsl(175 80% 40% / 0.3);
+    --dropzone-bg: hsl(220 15% 96%);
+    --dropzone-border: hsl(220 15% 85%);
+    --dropzone-active: hsl(175 80% 95%);
+  }
+
+  .dark {
+    --background: 220 25% 8%;
+    --foreground: 220 10% 95%;
+
+    --card: 220 25% 12%;
+    --card-foreground: 220 10% 95%;
+
+    --popover: 220 25% 12%;
+    --popover-foreground: 220 10% 95%;
+
+    --primary: 175 80% 50%;
+    --primary-foreground: 220 25% 8%;
+
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 220 10% 90%;
+
+    --muted: 220 20% 15%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 175 80% 50%;
+    --accent-foreground: 220 25% 8%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 175 80% 50%;
+
+    /* Custom tokens - dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(175 80% 45%), hsl(190 80% 55%));
+    --gradient-card: linear-gradient(145deg, hsl(220 25% 14%), hsl(220 25% 10%));
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 40px -5px hsl(175 80% 50% / 0.25);
+    --dropzone-bg: hsl(220 25% 10%);
+    --dropzone-border: hsl(220 20% 22%);
+    --dropzone-active: hsl(175 80% 15% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/50;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .dropzone-area {
+    background: var(--dropzone-bg);
+    border: 2px dashed var(--dropzone-border);
+    transition: all 0.3s ease;
+  }
+
+  .dropzone-area.active,
+  .dropzone-area:hover {
+    background: var(--dropzone-active);
+    border-color: hsl(var(--primary));
+  }
+
+  .image-card {
+    @apply relative overflow-hidden rounded-lg border border-border bg-card;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .image-card:hover {
+    @apply border-primary/50;
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+  }
+
+  .control-group {
+    @apply space-y-3 p-4 rounded-xl bg-muted/50 border border-border/50;
+  }
+
+  .btn-primary-gradient {
+    background: var(--gradient-primary);
+    @apply text-primary-foreground font-semibold;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary-gradient:hover {
+    filter: brightness(1.1);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .privacy-badge {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium;
+    @apply bg-emerald-500/10 text-emerald-500 border border-emerald-500/20;
+  }
+
+  .status-processing {
+    @apply bg-amber-500/10 text-amber-500;
+  }
+
+  .status-done {
+    @apply bg-emerald-500/10 text-emerald-500;
+  }
+
+  .status-error {
+    @apply bg-destructive/10 text-destructive;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulseSoft {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+}
